@@ -65,10 +65,13 @@ variable "workspace" {
 
 
 module "nsgflowlogs" {
-  source                        = "./tfmodule-nsg-flow-logs" 
-    azurerm.src = azurerm.nsgflow
+  source                        = "./tfmodule-NSGflowlogs"
+  providers = {
+    azurerm.src = azurerm.logs
   }
+   
    subscription_id          = "${var.subscription_id}"
+   hub_subscription_id      = "${var.hub_subscription_id}"
    rg                       = "${var.rg}"
    watcherrg                = "${var.watcherrg}"
    spokerg                  = "${var.spokerg}"
