@@ -59,7 +59,7 @@ variable "workspace" {
 
 #provider "azurerm" {
 #  features {}
-#  alias = "nsgflow"
+#  alias = "alias"
 #  subscription_id = var.subscription_id  
 #}
 
@@ -67,7 +67,7 @@ variable "workspace" {
 module "nsgflowlogs" {
   source                        = "github.com/ukho/tfmodule-NSGflowlogs?ref=0.1.0"
   providers = {
-    azurerm.src = azurerm.logs
+    azurerm.src = azurerm.alias
   }
    
    subscription_id          = "${var.subscription_id}"
