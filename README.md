@@ -57,13 +57,6 @@ variable "workspace" {
     default = ""
 }
 
-#provider "azurerm" {
-#  features {}
-#  alias = "alias"
-#  subscription_id = var.subscription_id  
-#}
-
-
 module "nsgflowlogs" {
   source                        = "github.com/ukho/tfmodule-NSGflowlogs?ref=0.1.0"
   providers = {
