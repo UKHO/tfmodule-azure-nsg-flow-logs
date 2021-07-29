@@ -65,7 +65,7 @@ variable "workspace" {
 
 
 module "nsgflowlogs" {
-  source                        = "./tfmodule-NSGflowlogs"
+  source                        = "github.com/ukho/tfmodule-NSGflowlogs?ref=0.1.0"
   providers = {
     azurerm.src = azurerm.logs
   }
