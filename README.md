@@ -15,35 +15,47 @@
 ## Usage Vars
 
 variable "subscription_id" {
-    default = "0a275b4e-b4ed-4ac0-93b4-3899c98f56af"
+    default = ""
 }
+
+variable "hub_subscription_id" {
+    description = "core services subscription"
+    default = ""  
+}
+
 variable "rg" {
-    default = "shedtek-RG"
+    description = "rg where the flowslogs will be stored"
+    default = ""
 }
+variable "watcherrg" {
+    description = "rg for NetworkWatcher"
+    default = ""
+}
+
 variable "spokerg" {
-    default = "m-shedtek-appgateway-RG"
+    description = "rg where the nsg lives"
+    default = ""
 }
 
 variable "spokensg" {
-   default = "NSG-FlowLogs-VM-nsg"
-}
-
-variable "watcherrg" {
-  default = "NetworkWatcherRG"
+   description = "NSG where we want to enable flowlogs"
+   default = ""
 }
 
 variable "watcher" {
-    default = "NetworkWatcher_uksouth"    
+    description = "The name of the NetworkWatcher - NetworkWatcher_uksouth - select region accordingly"
+    default = ""
 }
 
 variable "storage" {
-  default = "shedtek"
+  description = "storage account name - Select correct storage account depending on region"
+  default = ""
 }
 
 variable "workspace" {
-    default = "NSG-FlowLogs-Workspace"
+    description = "log analytics workspace name -  this is static no matter which region the nsg's reside in" 
+    default = ""
 }
-
 
 #provider "azurerm" {
 #  features {}
