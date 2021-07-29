@@ -14,15 +14,6 @@
 
 ## Usage Vars
 
-variable "subscription_id" {
-    default = ""
-}
-
-variable "hub_subscription_id" {
-    description = "core services subscription"
-    default = ""  
-}
-
 variable "rg" {
     description = "rg where the flowslogs will be stored"
     default = ""
