@@ -48,6 +48,25 @@ variable "workspace" {
     default = ""
 }
 
+#########RUN ROOT MODULE###############
+
+locals {
+  subscription_id     = "VALUE"
+  hub_subscription_id = "VALUE" 
+}
+
+provider "azurerm" {
+  features {}
+  alias           = "alias" 
+  subscription_id = local.subscription_id
+}
+
+provider "azurerm" {
+  features {}
+  alias           = "alias"
+  subscription_id = local.hub_subscription_id
+}
+
 module "nsgflowlogs" {
   source                        = "github.com/UKHO/tfmodule-nsg-flow-logs?ref=0.1.0"
   providers = {
