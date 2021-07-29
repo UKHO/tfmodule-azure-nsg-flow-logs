@@ -8,9 +8,9 @@
 ## Usage
 
 ```terraform
-# Private Endpoint
+# NSG Flow Logs with Traffic Analytics
 
-## Creating Private Enpoints
+## Creating nsg flow logs
 
 ## Usage Vars
 
