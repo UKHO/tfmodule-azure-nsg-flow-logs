@@ -60,11 +60,10 @@ variable "workspace" {
 module "nsgflowlogs" {
   source                        = "github.com/UKHO/tfmodule-nsg-flow-logs?ref=0.1.0"
   providers = {
-    azurerm.src = azurerm.alias
+    azurerm.nsgflow = azurerm.alias
+    azurerm.hub = azurerm.alias
   }
    
-   subscription_id          = "${var.subscription_id}"
-   hub_subscription_id      = "${var.hub_subscription_id}"
    rg                       = "${var.rg}"
    watcherrg                = "${var.watcherrg}"
    spokerg                  = "${var.spokerg}"
