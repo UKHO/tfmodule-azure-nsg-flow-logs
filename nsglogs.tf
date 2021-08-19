@@ -3,9 +3,9 @@ data "azurerm_resource_group" "main" {
   name     = var.rg
 }
 
-data "azurerm_resource_group" "spokerg" {
+data "azurerm_resource_group" "spokensgrg" {
   provider = azurerm.nsgflow
-  name = var.spokerg
+  name = var.spokensgrg
 }
 
 data "azurerm_resource_group" "watcherrg" {
