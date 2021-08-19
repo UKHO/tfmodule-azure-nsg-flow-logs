@@ -16,7 +16,7 @@ data "azurerm_resource_group" "watcherrg" {
 data "azurerm_network_security_group" "main" {
   provider            = azurerm.nsgflow
   name                = var.spokensg
-  resource_group_name = data.azurerm_resource_group.spokerg.name
+  resource_group_name = data.azurerm_resource_group.spokensgrg.name
 }
 
 data "azurerm_network_watcher" "main" {
