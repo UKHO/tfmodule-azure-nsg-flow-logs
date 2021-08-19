@@ -7,7 +7,7 @@ variable "watcherrg" {
     default = ""
 }
 
-variable "spokerg" {
+variable "spokensgrg" {
     description = "rg where the nsg lives"
     default = ""
 }
