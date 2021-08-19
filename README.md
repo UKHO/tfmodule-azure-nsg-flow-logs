@@ -68,7 +68,7 @@ provider "azurerm" {
 }
 
 module "nsgflowlogs" {
-  source                        = "github.com/UKHO/tfmodule-nsg-flow-logs?ref=0.1.0"
+  source                        = "github.com/UKHO/tfmodule-nsg-flow-logs?ref=0.2.0"
   providers = {
     azurerm.nsgflow = azurerm.alias
     azurerm.hub = azurerm.alias
