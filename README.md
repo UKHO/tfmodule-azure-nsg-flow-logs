@@ -23,7 +23,7 @@ variable "watcherrg" {
     default = ""
 }
 
-variable "spokerg" {
+variable "spokensgrg" {
     description = "rg where the nsg lives"
     default = ""
 }
@@ -76,7 +76,7 @@ module "nsgflowlogs" {
    
    rg                       = "${var.rg}"
    watcherrg                = "${var.watcherrg}"
-   spokerg                  = "${var.spokerg}"
+   spokerg                  = "${var.spokensgrg}"
    spokensg                 = "${var.spokensg}"
    watcher                  = "${var.watcher}"
    storage                  = "${var.storage}"
