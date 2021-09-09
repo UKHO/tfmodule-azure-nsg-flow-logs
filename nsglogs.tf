@@ -46,6 +46,7 @@ resource "azurerm_network_watcher_flow_log" "main" {
   network_security_group_id = data.azurerm_network_security_group.main.id
   storage_account_id        = data.azurerm_storage_account.main.id
   enabled                   = true
+  lifecycle { ignore_changes = [tags] }
 
   retention_policy {
     enabled = true
