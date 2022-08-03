@@ -11,7 +11,7 @@ data "azurerm_resource_group" "spokensgrg" {
 data "azurerm_resource_group" "watcherrg" {
   provider = azurerm.nsgflow
   name = var.watcherrg
-  location = var.loc
+  location = "uksouth"
 }
 
 data "azurerm_network_security_group" "main" {
