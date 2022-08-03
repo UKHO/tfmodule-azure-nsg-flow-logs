@@ -7,6 +7,11 @@ variable "watcherrg" {
     default = ""
 }
 
+variable "loc" {
+    description = "location for NetworkWatcher"
+    default = ""
+}
+
 variable "spokensgrg" {
     description = "rg where the nsg lives"
     default = ""
