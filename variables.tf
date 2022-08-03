@@ -2,13 +2,9 @@ variable "rg" {
     description = "rg where the flowslogs will be stored"
     default = ""
 }
+
 variable "watcherrg" {
     description = "rg for NetworkWatcher"
-    default = ""
-}
-
-variable "loc" {
-    description = "location for NetworkWatcher"
     default = ""
 }
 
