@@ -10,7 +10,8 @@ data "azurerm_resource_group" "spokensgrg" {
 
 data "azurerm_resource_group" "watcherrg" {
   provider = azurerm.nsgflow
-  name = var.watcherrg  
+  name = var.watcherrg
+  location = var.loc
 }
 
 data "azurerm_network_security_group" "main" {
@@ -39,7 +40,6 @@ data "azurerm_log_analytics_workspace" "main" {
 
 resource "azurerm_network_watcher_flow_log" "main" {
   name                 = "${var.spokensg}-flowlog"
-  location             = "uksouth"
   provider             = azurerm.nsgflow
   version              = "2"
   network_watcher_name = data.azurerm_network_watcher.main.name
