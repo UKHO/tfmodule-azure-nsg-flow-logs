@@ -1,6 +1,7 @@
 data "azurerm_resource_group" "main" {
   provider = azurerm.hub
   name     = var.rg
+  location = var.loc
 }
 
 data "azurerm_resource_group" "spokensgrg" {
