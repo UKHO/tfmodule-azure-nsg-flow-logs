@@ -3,11 +3,6 @@ variable "rg" {
     default = ""
 }
 
-variable "loc" {
-    description = "location"
-    default ""
-}
-
 variable "watcherrg" {
     description = "rg for NetworkWatcher"
     default = ""
