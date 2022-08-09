@@ -38,16 +38,16 @@ data "azurerm_log_analytics_workspace" "main" {
 }
 
 resource "azurerm_network_watcher_flow_log" "main" {
+  network_watcher_name = data.azurerm_network_watcher.main.name
+  resource_group_name  = data.azurerm_resource_group.watcherrg.name
   name                 = "${var.spokensg}-flowlog"   
   provider             = azurerm.nsgflow
   version              = "2"
-  network_watcher_name = data.azurerm_network_watcher.main.name
-  resource_group_name  = data.azurerm_resource_group.watcherrg.name
 
   network_security_group_id = data.azurerm_network_security_group.main.id
   storage_account_id        = data.azurerm_storage_account.main.id
   enabled                   = true
-  #lifecycle { ignore_changes = [tags] }
+  lifecycle { ignore_changes = [tags] }
 
   retention_policy {
     enabled = true
