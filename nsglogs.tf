@@ -41,7 +41,6 @@ data "azurerm_log_analytics_workspace" "main" {
 resource "azurerm_network_watcher_flow_log" "main" {
   network_watcher_name = data.azurerm_network_watcher.main.name
   resource_group_name  = data.azurerm_resource_group.watcherrg.name
-  count                = try(var.spokensg, {}) == {} ? 0 : 1
   name                 = "${var.spokensg}-flowlog"   
   provider             = azurerm.nsgflow
   version              = "2"
