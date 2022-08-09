@@ -15,7 +15,7 @@ variable "spokensgrg" {
 
 variable "spokensg" {
    description = "NSG where we want to enable flowlogs"
-   default = "-flowlog"
+   default = ""
 }
 
 variable "watcher" {
