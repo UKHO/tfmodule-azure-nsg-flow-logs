@@ -8,7 +8,7 @@ variable "watcherrg" {
     default = ""
 }
 
-variable "create_resource_with_ignore_changes" {
+variable "ignore_changes" {
   type        = number
   description = "Choose whether to create a version that uses hardcoded ignore_changes"
   default     = 1
