@@ -8,6 +8,12 @@ variable "watcherrg" {
     default = ""
 }
 
+variable "create_resource_with_ignore_changes" {
+  type        = number
+  description = "Choose whether to create a version that uses hardcoded ignore_changes"
+  default     = 1
+}
+
 variable "spokensgrg" {
     description = "rg where the nsg lives"
     default = ""
