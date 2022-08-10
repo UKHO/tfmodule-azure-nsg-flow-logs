@@ -5,7 +5,10 @@ variable "rg" {
 
 variable "watcherrg" {
     description = "rg for NetworkWatcher"
-    default = ""
+      type = object({
+    name         = string
+    location     = string
+  })
 }
 
 variable "ignore_changes" {
