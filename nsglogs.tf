@@ -52,8 +52,9 @@ resource "azurerm_network_watcher_flow_log" "main" {
     ignore_changes = [
       tags,
       create_resource_with_ignore_changes
-    ] 
+   ] 
   }
+ }
 
   retention_policy {
     enabled = true
