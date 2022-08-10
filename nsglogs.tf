@@ -38,7 +38,6 @@ data "azurerm_log_analytics_workspace" "main" {
 }
 
 resource "azurerm_network_watcher_flow_log" "main" {
-  count = var.create_resource_with_ignore_changes
   network_watcher_name = data.azurerm_network_watcher.main.name
   resource_group_name  = data.azurerm_resource_group.watcherrg.name
   name                 = "${var.spokensg}-flowlog"   
@@ -50,10 +49,8 @@ resource "azurerm_network_watcher_flow_log" "main" {
   enabled                   = true
   lifecycle { 
     ignore_changes = [
-      tags,
-      create_resource_with_ignore_changes
+      tags
    ] 
-  }
  }
 
   retention_policy {
