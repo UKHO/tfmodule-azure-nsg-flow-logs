@@ -49,7 +49,8 @@ resource "azurerm_network_watcher_flow_log" "main" {
   enabled                   = true
   lifecycle { 
     ignore_changes = [
-      tags
+      tags,
+      location
    ] 
  }
 
