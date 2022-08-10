@@ -3,6 +3,12 @@ variable "rg" {
     default = ""
 }
 
+variable "ignore_changes" {
+  type        = number
+  description = "Choose whether to create a version that uses hardcoded ignore_changes"
+  default     = 1
+}
+
 variable "watcherrg" {
     description = "rg for NetworkWatcher"
     default = "NetworkWatcherRG"
