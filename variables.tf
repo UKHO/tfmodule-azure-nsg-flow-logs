@@ -38,3 +38,13 @@ variable "workspace" {
     description = "log analytics workspace name -  this is static no matter which region the nsg's reside in" 
     default = ""
 }
+
+variable "retentiondays" {
+    description = "rentetion days -  this is static value" 
+    default = 90
+}
+
+variable "intervalminutes" {
+    description = "interval minutes -  this is static value" 
+    default = 60
+}
