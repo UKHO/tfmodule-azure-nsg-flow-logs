@@ -50,7 +50,7 @@ variable "workspace" {
 
 variable "intervalminutes" {
     description = "interval minutes - this is static value. Please choose 10 or 60 mins interval" 
-    default = ""
+    default = 60
 }
 
 #########RUN ROOT MODULE###############
