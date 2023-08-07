@@ -65,6 +65,6 @@ resource "azurerm_network_watcher_flow_log" "main" {
     workspace_id          = data.azurerm_log_analytics_workspace.main.workspace_id
     workspace_region      = data.azurerm_log_analytics_workspace.main.location
     workspace_resource_id = data.azurerm_log_analytics_workspace.main.id
-    interval_in_minutes   = 60
+    interval_in_minutes   = var.intervalminutes 
   }
 }

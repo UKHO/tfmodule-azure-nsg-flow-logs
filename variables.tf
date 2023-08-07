@@ -38,3 +38,8 @@ variable "workspace" {
     description = "log analytics workspace name -  this is static no matter which region the nsg's reside in" 
     default = ""
 }
+
+variable "intervalminutes" {
+    description = "interval minutes - this is static value. Please choose 10 or 60 mins interval" 
+    default = 60
+}

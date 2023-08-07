@@ -48,6 +48,11 @@ variable "workspace" {
     default = ""
 }
 
+variable "intervalminutes" {
+    description = "interval minutes - this is static value. Please choose 10 or 60 mins interval" 
+    default = 60
+}
+
 #########RUN ROOT MODULE###############
 
 locals {
@@ -81,5 +86,6 @@ module "nsgflowlogs" {
    watcher                  = "${var.watcher}"
    storage                  = "${var.storage}"
    workspace                = "${var.workspace}"
+   intervalminutes          = "${var.intervalminutes}"
  }
 
