@@ -45,7 +45,7 @@ resource "azurerm_network_watcher_flow_log" "main" {
   provider             = azurerm.nsgflow
   version              = "2"
 
-  network_security_group_id = data.azurerm_network_security_group.main.id
+  target_resource_id        = data.azurerm_network_security_group.main.id
   storage_account_id        = data.azurerm_storage_account.main.id
   enabled                   = true
   lifecycle { 
