@@ -37,6 +37,12 @@ data "azurerm_log_analytics_workspace" "main" {
   resource_group_name = data.azurerm_resource_group.main.name
 }
 
+data "azurerm_virtual_network" "vnet" {
+  provider            = azurerm.nsgflow
+  name                = var.vnet_name
+  resource_group_name = data.azurerm_resource_group.spokensgrg.name  
+}
+
 resource "azurerm_network_watcher_flow_log" "main" {
   count = var.ignore_changes
   network_watcher_name = data.azurerm_network_watcher.main.name
@@ -45,7 +51,7 @@ resource "azurerm_network_watcher_flow_log" "main" {
   provider             = azurerm.nsgflow
   version              = "2"
 
-  target_resource_id        = data.azurerm_network_security_group.main.id
+  target_resource_id        = data.azurerm_virtual_network.vnet.id
   storage_account_id        = data.azurerm_storage_account.main.id
   enabled                   = true
   lifecycle { 

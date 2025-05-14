@@ -43,3 +43,8 @@ variable "intervalminutes" {
     description = "interval minutes - this is static value. Please choose 10 or 60 mins interval" 
     default = 60
 }
+
+variable "vnet_name" {
+    description = "spoke vnet name"
+    default = ""
+}
