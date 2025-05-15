@@ -14,12 +14,12 @@ variable "watcherrg" {
     default = "NetworkWatcherRG"
 }
 
-variable "spokensgrg" {
+variable "spokevnetrg" {
     description = "rg where the nsg lives"
     default = ""
 }
 
-variable "spokensg" {
+variable "spokevnet" {
    description = "NSG where we want to enable flowlogs"
    default = ""
 }
@@ -42,4 +42,9 @@ variable "workspace" {
 variable "intervalminutes" {
     description = "interval minutes - this is static value. Please choose 10 or 60 mins interval" 
     default = 60
+}
+
+variable "vnet_name" {
+    description = "spoke vnet name"
+    default = ""
 }
