@@ -1,4 +1,4 @@
-# Terraform Module: NSG-Flow_logs
+# Terraform Module: Virtual-Network-Flow_logs
 
 ## Required Resources
 
@@ -8,9 +8,9 @@
 ## Usage
 
 ```terraform
-# NSG Flow Logs with Traffic Analytics
+# Virtual Network Flow Logs with Traffic Analytics
 
-## Creating nsg flow logs
+## Creating vnet flow logs
 
 ## Usage Vars
 
@@ -23,13 +23,13 @@ variable "watcherrg" {
     default = ""
 }
 
-variable "spokensgrg" {
-    description = "rg where the nsg lives"
+variable "spokevnetrg" {
+    description = "rg where the vnet lives"
     default = ""
 }
 
-variable "spokensg" {
-   description = "NSG where we want to enable flowlogs"
+variable "spokevnet" {
+   description = "vnet where we want to enable flowlogs"
    default = ""
 }
 
@@ -53,6 +53,11 @@ variable "intervalminutes" {
     default = 60
 }
 
+variable "vnet_name" {
+    description = "spoke vnet name"
+    default = ""
+}
+
 #########RUN ROOT MODULE###############
 
 locals {
@@ -73,19 +78,19 @@ provider "azurerm" {
 }
 
 module "nsgflowlogs" {
-  source                        = "github.com/UKHO/tfmodule-nsg-flow-logs?ref=0.2.0"
+  depends_on = [module.spokesetup]
+  source     = "github.com/UKHO/tfmodule-nsg-flow-logs?ref=0.6.0"
   providers = {
-    azurerm.nsgflow = azurerm.alias
-    azurerm.hub = azurerm.alias
+    azurerm.vnetflow = azurerm.alias
+    azurerm.hub     = azurerm.alias
   }
-   
-   rg                       = "${var.rg}"
-   watcherrg                = "${var.watcherrg}"
-   spokerg                  = "${var.spokensgrg}"
-   spokensg                 = "${var.spokensg}"
-   watcher                  = "${var.watcher}"
-   storage                  = "${var.storage}"
-   workspace                = "${var.workspace}"
-   intervalminutes          = "${var.intervalminutes}"
- }
+  rg          = local.rg
+  watcherrg   = local.watcherrg
+  spokevnetrg = local.spokevnetrg
+  spokevnet   = local.spokevnet
+  watcher     = local.watcher
+  storage     = local.storage
+  workspace   = local.workspace
+  vnet_name   = module.spokesetup.virtual_network_name
+} 
 
