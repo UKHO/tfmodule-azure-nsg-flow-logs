@@ -4,7 +4,7 @@ terraform {
       source = "hashicorp/azurerm"
       configuration_aliases = [
         azurerm.hub,
-        azurerm.nsgflow,
+        azurerm.vnetflow,
       ]
     }
   }

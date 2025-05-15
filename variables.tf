@@ -14,12 +14,12 @@ variable "watcherrg" {
     default = "NetworkWatcherRG"
 }
 
-variable "spokensgrg" {
+variable "spokevnetrg" {
     description = "rg where the nsg lives"
     default = ""
 }
 
-variable "spokensg" {
+variable "spokevnet" {
    description = "NSG where we want to enable flowlogs"
    default = ""
 }
