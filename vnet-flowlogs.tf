@@ -2,12 +2,8 @@ resource "azurerm_network_watcher_flow_log" "main" {
   count = var.ignore_changes
   network_watcher_name = data.azurerm_network_watcher.main.name
   resource_group_name  = data.azurerm_resource_group.watcherrg.name
-<<<<<<< HEAD
-  name                 = "${var.spokensg}-flowlogs"   
-=======
   name                 = "${var.spokevnet}-flowlogs"   
->>>>>>> 2320405a0cabeaf54b9275671ef312b5f2845380
-  provider             = azurerm.nsgflow
+  provider             = azurerm.vnetflow
   version              = "2"
 
   target_resource_id        = data.azurerm_virtual_network.vnet.id
